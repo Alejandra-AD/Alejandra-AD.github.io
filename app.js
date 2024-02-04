@@ -140,7 +140,7 @@ const copiarTexto = (texto) => {
     navigator.clipboard.writeText(texto)
         .then(() => {
             console.log("Texto copiado al portapapeles:", texto);
-            copiarMensaje.textContent = "mensaje copiado";
+            copiarMensaje.textContent = "mensaje copiado ✔️";
             setTimeout(() => {
                 copiarMensaje.textContent = "copiar mensaje";
             }, 1500); // 1500 milisegundos = 1.5 segundos
