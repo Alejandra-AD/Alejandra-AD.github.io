@@ -77,17 +77,6 @@ body{
   width:50%;
 }
 
-.checkmark {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: block;
-  stroke-width: 2;
-  stroke: green;
-  stroke-miterlimit: 10;
-  stroke-dashoffset: 0;
-  margin: 10% auto;
-}
 
 .container{
   background-color:#F3F5FC;

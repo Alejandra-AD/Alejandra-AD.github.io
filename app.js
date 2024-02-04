@@ -160,21 +160,22 @@ addEventListener("click", (e) => {
     const texto = mensajeEncriptado.textContent;
 
     if (e.target.id === "btnEncriptar") {
-
-        // console.log("click a boton encriptar");
-        // console.log({ contenidoTexto });
-
+        console.log("click a boton encriptar");
+        console.log({ contenidoTexto });
+        const btnDesencriptar = document.getElementById("btnDesencriptar");
         const textoEncriptado = encriptar(contenidoTexto, mapaSustitucionEncriptar);
         pintarTexto(textoEncriptado);
-    };
+        btnDesencriptar.disabled = false;
+    }
 
     if (e.target.id === "btnDesencriptar") {
-        // console.log("click al boton de desencriptar");
+        console.log("click al boton de desencriptar");
         const contenidoTexto = textArea.value;
         const textoDesencriptado = desencriptar(contenidoTexto, mapaSustitucionDesencriptar);
         pintarTexto(textoDesencriptado);
+        e.target.disabled = true;
     }
-
+    
     // Copiar el texto al portapapeles
     if (e.target.id === "btnCopiar") {
         // console.log("click al boton copiar");
