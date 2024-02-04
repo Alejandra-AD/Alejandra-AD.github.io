@@ -41,7 +41,7 @@ body{
 }
 
 .btn-copiar{
-  background-color:transparent!important;
+  background-color:transparent;
   border:1px solid #0A3871;
   border-radius:50px;
   color:#0A3871;
@@ -51,6 +51,9 @@ body{
   padding:20px;
   width:80%;
 }
+/* .btn-copiar:focus{
+  background-color: plum;
+} */
 
 .btn-desencriptar{
   background:color #d8dfe8;
@@ -72,6 +75,18 @@ body{
   margin:5px;
   padding:20px;
   width:50%;
+}
+
+.checkmark {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 2;
+  stroke: green;
+  stroke-miterlimit: 10;
+  stroke-dashoffset: 0;
+  margin: 10% auto;
 }
 
 .container{
