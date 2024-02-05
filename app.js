@@ -140,7 +140,7 @@ const copiarTexto = (texto) => {
     navigator.clipboard.writeText(texto)
         .then(() => {
             console.log("Texto copiado al portapapeles:", texto);
-            copiarMensaje.textContent = "mensaje copiado ✅";
+            copiarMensaje.textContent = "mensaje copiado";
             setTimeout(() => {
                 copiarMensaje.textContent = "copiar mensaje";
             }, 1500); // 1500 milisegundos = 1.5 segundos
@@ -160,22 +160,25 @@ addEventListener("click", (e) => {
     const texto = mensajeEncriptado.textContent;
 
     if (e.target.id === "btnEncriptar") {
-        console.log("click a boton encriptar");
-        console.log({ contenidoTexto });
+        // console.log("click a boton encriptar");
+        // console.log({ contenidoTexto });
         const btnDesencriptar = document.getElementById("btnDesencriptar");
         const textoEncriptado = encriptar(contenidoTexto, mapaSustitucionEncriptar);
         pintarTexto(textoEncriptado);
         btnDesencriptar.disabled = false;
+        e.target.disabled = true;
     }
 
     if (e.target.id === "btnDesencriptar") {
         console.log("click al boton de desencriptar");
         const contenidoTexto = textArea.value;
+        const btnEncriptar = document.getElementById("btnEncriptar");
         const textoDesencriptado = desencriptar(contenidoTexto, mapaSustitucionDesencriptar);
         pintarTexto(textoDesencriptado);
+        btnEncriptar.disabled = false;
         e.target.disabled = true;
     }
-    
+
     // Copiar el texto al portapapeles
     if (e.target.id === "btnCopiar") {
         // console.log("click al boton copiar");
