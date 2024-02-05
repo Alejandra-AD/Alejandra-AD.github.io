@@ -83,7 +83,7 @@ const encriptar = (texto, mapa) => {
             icon: "error",
             title: "Oops...",
             text: "¡Solo se permiten letras minúsculas y sin acentos!",
-        });
+        }); 
         return; // Salir de la función si se encuentran caracteres inválidos
     }
     texto = texto.toLowerCase();
