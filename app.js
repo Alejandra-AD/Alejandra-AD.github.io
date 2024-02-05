@@ -76,8 +76,8 @@ const copiarMensaje = document.getElementById("btnCopiar");
 // Función para encriptar texto
 const encriptar = (texto, mapa) => {
 
-    const caracteresInvalidos = /[^a-z\s!?¡¿]/gi;//expresion regular 
-    if (caracteresInvalidos.test(texto)) {
+    const caracteresValidos = /^[a-z\s!?¡¿]*$/;//expresion regular 
+    if (!caracteresValidos.test(texto)) {
         // Mostrar una notificación de error utilizando SweetAlert
         Swal.fire({
             icon: "error",
