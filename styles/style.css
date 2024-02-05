@@ -186,7 +186,7 @@ svg{
   font-weight:400;
   height:80%;
   line-height:150%;
-  max-width:100%;
+  width:100%;
   outline: none;
   position:relative;
   white-space:pre-wrap;
@@ -233,6 +233,12 @@ svg{
   .mensaje-encriptar{
     width:100%;
   }
+  .texto textarea{
+    
+    width:70%;
+   
+    
+  }
 }
 
 
@@ -256,6 +262,12 @@ svg{
   
   .mensaje-encriptar{
     width:100%;
+  }
+  .texto textarea{
+    
+    width:70%;
+   
+    
   }
 }
 
