@@ -75,6 +75,17 @@ const copiarMensaje = document.getElementById("btnCopiar");
 
 // Función para encriptar texto
 const encriptar = (texto, mapa) => {
+
+    const caracteresInvalidos = /[^a-z\s!?¡¿]/gi;//expresion regular 
+    if (caracteresInvalidos.test(texto)) {
+        // Mostrar una notificación de error utilizando SweetAlert
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "¡Solo se permiten letras minúsculas y sin acentos!",
+        });
+        return; // Salir de la función si se encuentran caracteres inválidos
+    }
     texto = texto.toLowerCase();
 
     // Inicializa una cadena para el texto encriptado
@@ -118,7 +129,7 @@ const pintarTexto = (textoEncriptado) => {
 
 // Función para desencriptar texto
 const desencriptar = (texto, mapa) => {
-    // Convierte el texto a minúsculas para que la desencriptación sea case-insensitive
+    // Convierte el texto a minúsculas
     texto = texto.toLowerCase();
 
     // Inicializa una cadena para el texto desencriptado
@@ -144,7 +155,15 @@ const copiarTexto = (texto) => {
             setTimeout(() => {
                 copiarMensaje.textContent = "copiar mensaje";
             }, 1500); // 1500 milisegundos = 1.5 segundos
-            return;
+            
+            Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "mensaje copiado",
+                showConfirmButton: false,
+                timer: 1500
+              });
+              return;
 
         })
         .catch((error) => {
